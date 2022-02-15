@@ -13,7 +13,7 @@ export default function Header() {
       <h1>Toggle</h1>
       <Profile>
         <Welcome> Olá {emoji}</Welcome>
-        <UserName>André A3</UserName>
+        <UserName>Akolr</UserName>
       </Profile>
     </Container>
   );
