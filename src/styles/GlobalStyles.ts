@@ -14,6 +14,10 @@ export default createGlobalStyle`
        font-family: 'Roboto', sans-serif;
    }
 
+   a{
+       text-decoration: none;
+   }
+
    button{
        cursor: pointer;
    }

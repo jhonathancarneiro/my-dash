@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 
 import emojis from "../../utils/emojis";
+import Toggle from "../../components/toggle";
 import { Container, Profile, Welcome, UserName } from "./styles";
 
 export default function Header() {
@@ -10,7 +11,7 @@ export default function Header() {
   }, []);
   return (
     <Container>
-      <h1>Toggle</h1>
+      <Toggle />
       <Profile>
         <Welcome> Olá {emoji}</Welcome>
         <UserName>Akolr</UserName>
