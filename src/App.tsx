@@ -20,7 +20,7 @@ export default function App() {
           <Content>
             <Routes>
               <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/list/:type" element={<List />} />
+              <Route path="/List/:type" element={<List />} />
             </Routes>
           </Content>
         </Grid>

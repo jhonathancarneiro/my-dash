@@ -4,21 +4,26 @@ import SelectdInput from "../../components/SelectdInput";
 import HistoryFinanceCard from "../../components/HistoryFinanceCard";
 
 import { Container, Content, Filters } from "./styles";
+import { useParams } from "react-router-dom";
 
-interface RouteParams{
-  match:{
-    params:{
-      type:string
-    }
-  }
-}
+// export interface RouteParams {
+//   match: {
+//     params: {
+//       type: string;
+//     };
+//   };
+// }
 //TODO: criação de interface, para o entendimento de rotas dinamicas
 export default function List() {
-  const title = useMemo(({match}) => {
-    return(
+  const { type } = useParams();
 
-    )
-  }, []);
+  const title = useMemo(() => {
+    return type === "entry-balance" ? "Entrada" : "Saidas";
+  }, [type]);
+  const lineColor = useMemo(() => {
+    return type === "entry-balance" ? "#F7931B" : "#E44C4E";
+  }, [type]);
+
   const months = [
     {
       value: "1",
@@ -49,7 +54,7 @@ export default function List() {
   ];
   return (
     <Container>
-      <ContentHeader title="Saidas" lineColor="#f32f15">
+      <ContentHeader title={title} lineColor={lineColor}>
         <SelectdInput options={months} />
         <SelectdInput options={years} />
       </ContentHeader>
